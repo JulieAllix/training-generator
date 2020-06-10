@@ -5,9 +5,10 @@ export default StyleSheet.create({
     appTitle: {
         fontFamily: 'poppins-med',
         color: Colors.accent,
-        fontSize: 30,
+        fontSize: 34,
         textTransform: 'uppercase',
         textAlign: 'center',
+        marginTop: 20,
     },
     pageTitle: {
         fontFamily: 'abril',
@@ -15,12 +16,14 @@ export default StyleSheet.create({
         fontSize: 24,
         textTransform: 'uppercase',
         textAlign: 'center',
+        marginVertical: 20,
     },
     pageSubtitle: {
         fontFamily: 'montserrat',
         color: Colors.accent,
-        fontSize: 14,
+        fontSize: 16,
         textAlign: 'center',
+        marginVertical: 15,
     },
     buttonText: {
         fontFamily: 'poppins',
