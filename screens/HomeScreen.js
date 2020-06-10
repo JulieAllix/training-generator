@@ -19,7 +19,7 @@ const HomeScreen = props => {
             <Text style={DefaultStyles.pageSubtitle}>Generate your daily training based on your equipment and the muscles you want to train !</Text>
             <MainButton>Get started</MainButton>
         </View>
-      );
+    );
 };
 
 const styles = StyleSheet.create({
