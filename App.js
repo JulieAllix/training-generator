@@ -5,6 +5,8 @@ import { AppLoading } from 'expo';
 
 import Colors from './constants/themeColors';
 
+import HomeScreen from './screens/HomeScreen';
+
 const fetchFonts = () => {
   return Font.loadAsync({
     'montserrat': require('./assets/fonts/Montserrat-Regular.ttf'),
@@ -27,22 +29,18 @@ export default function App() {
     );
   }
 
+  let content = <HomeScreen />;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Open up App.js to start working on your app!</Text>
+    <View style={styles.screen}>
+      {content}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  text: {
-    fontFamily: 'poppins-med',
-    color: Colors.accent,
-  }
 });
