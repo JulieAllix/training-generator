@@ -3,10 +3,12 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import Colors from '../constants/themeColors';
 
-const StartGameScreen = props => {};
+const EquipmentScreen = props => {
+    
+};
 
 const styles = StyleSheet.create({
 
 });
 
-export default StartGameScreen;
+export default EquipmentScreen;

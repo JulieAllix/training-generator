@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
+import Colors from './constants/themeColors';
+
 const fetchFonts = () => {
   return Font.loadAsync({
     'montserrat': require('./assets/fonts/Montserrat-Regular.ttf'),
@@ -40,6 +42,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontFamily: 'poppins-med'
+    fontFamily: 'poppins-med',
+    color: Colors.accent,
   }
 });
