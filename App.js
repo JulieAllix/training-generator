@@ -19,6 +19,7 @@ const fetchFonts = () => {
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [startStatus, setStartStatus] = useState(false);
 
   if (!dataLoaded) {
     return (
@@ -30,7 +31,15 @@ export default function App() {
     );
   }
 
-  let content = <EquipmentScreen />;
+  const startAppHandler = (bool) => {
+    setStartStatus(bool);
+  };
+
+  let content = <HomeScreen onStartApp={startAppHandler}/>;
+
+  if (startStatus === true) {
+    content = <EquipmentScreen onClick={startAppHandler}/>;
+  };
 
   return (
     <View style={styles.screen}>

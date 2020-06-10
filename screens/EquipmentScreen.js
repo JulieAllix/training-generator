@@ -9,7 +9,7 @@ import MainButton from '../components/MainButton';
 
 const EquipmentScreen = props => {
     return (
-        <View style={styles.screen}>
+        <View style={styles.screen} animationType="slide">
             <Text style={DefaultStyles.pageTitle}>Equipment</Text>
             <Text style={DefaultStyles.pageSubtitle}>Which equipment is at your disposal today ?</Text>
             <View style={styles.options}>
@@ -42,7 +42,7 @@ const EquipmentScreen = props => {
                     </OptionButton>
                 </View>
             </View>
-            <MainButton>Validate</MainButton>
+            <MainButton onPress={() => props.onClick(false)}>Validate</MainButton>
         </View>
     );
 };
