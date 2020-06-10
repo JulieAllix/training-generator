@@ -13,10 +13,10 @@ export default StyleSheet.create({
     pageTitle: {
         fontFamily: 'abril',
         color: Colors.accent,
-        fontSize: 24,
+        fontSize: 28,
         textTransform: 'uppercase',
         textAlign: 'center',
-        marginVertical: 20,
+        marginTop: 25,
     },
     pageSubtitle: {
         fontFamily: 'montserrat',
@@ -35,7 +35,7 @@ export default StyleSheet.create({
     optionText: {
         fontFamily: 'poppins',
         color: Colors.primary,
-        fontSize: 14,
+        fontSize: 16,
         textTransform: 'uppercase',
         textAlign: 'center',
     }

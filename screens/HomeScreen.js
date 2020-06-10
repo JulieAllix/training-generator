@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     image: {
         width: '80%',
         height: 380,
-        borderWidth: 2,
         marginTop: 30,
     },
     appName: {
