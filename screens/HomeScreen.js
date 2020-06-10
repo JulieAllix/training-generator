@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 import Colors from '../constants/themeColors';
+import DefaultStyles from '../constants/defaultStyles';
 
 const HomeScreen = props => {
     return (
@@ -10,8 +11,10 @@ const HomeScreen = props => {
                 style={styles.image} 
                 source={require('../assets/fitness-app.png')}
                 resizeMode="cover"
+                alt="A lady holding weights with a mobile phone in the background"
             />
-          <Text>Coucou</Text>
+          <Text style={DefaultStyles.appTitle}>Training generator</Text>
+            <Text style={DefaultStyles.pageSubtitle}>Generate your daily training based on your equipment and the muscles you want to train !</Text>
         </View>
       );
 };
@@ -21,12 +24,16 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        padding: 30,
     },
     image: {
         width: '80%',
         height: 400,
         borderWidth: 2,
     },
+    appName: {
+        textTransform: 'uppercase',
+    }
 });
 
 export default HomeScreen;
