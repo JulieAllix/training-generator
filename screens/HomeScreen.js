@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 import Colors from '../constants/themeColors';
@@ -7,6 +7,7 @@ import DefaultStyles from '../constants/defaultStyles';
 import MainButton from '../components/MainButton';
 
 const HomeScreen = props => {
+
     return (
         <View style={styles.screen}>
             <Image 
@@ -17,9 +18,9 @@ const HomeScreen = props => {
             />
             <Text style={DefaultStyles.appTitle}>Training generator</Text>
             <Text style={DefaultStyles.pageSubtitle}>Generate your daily training based on your equipment and the muscles you want to train !</Text>
-            <MainButton>Get started</MainButton>
+            <MainButton onPress={() => props.onStartApp(true)}>Get started</MainButton>
         </View>
-      );
+    );
 };
 
 const styles = StyleSheet.create({
@@ -32,7 +33,6 @@ const styles = StyleSheet.create({
     image: {
         width: '80%',
         height: 380,
-        borderWidth: 2,
         marginTop: 30,
     },
     appName: {

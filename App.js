@@ -6,6 +6,7 @@ import { AppLoading } from 'expo';
 import Colors from './constants/themeColors';
 
 import HomeScreen from './screens/HomeScreen';
+import EquipmentScreen from './screens/EquipmentScreen';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -18,6 +19,7 @@ const fetchFonts = () => {
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [startStatus, setStartStatus] = useState(false);
 
   if (!dataLoaded) {
     return (
@@ -29,7 +31,15 @@ export default function App() {
     );
   }
 
-  let content = <HomeScreen />;
+  const startAppHandler = (bool) => {
+    setStartStatus(bool);
+  };
+
+  let content = <HomeScreen onStartApp={startAppHandler}/>;
+
+  if (startStatus === true) {
+    content = <EquipmentScreen onClick={startAppHandler}/>;
+  };
 
   return (
     <View style={styles.screen}>
