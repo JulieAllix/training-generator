@@ -17,7 +17,7 @@ const HomeScreen = props => {
     const [availableDeviceHeight, setAvailableDeviceHeight] = useState(Dimensions.get('window').height);
 
     const [imageWidth, setImageWidth] = useState(Dimensions.get('window').width * 0.8);
-    const [imageHeight, setImageHeight] = useState(Dimensions.get('window').height * 0.6);
+    const [imageHeight, setImageHeight] = useState(Dimensions.get('window').height * 0.5);
 
     useEffect(() => {
         const updateLayout = () => {
@@ -35,7 +35,7 @@ const HomeScreen = props => {
     useEffect(() => {
         const updateLayout = () => {
             setImageWidth(Dimensions.get('window').width * 0.8);
-            setImageHeight(Dimensions.get('window').height * 0.6);
+            setImageHeight(Dimensions.get('window').height * 0.5);
         };
     
         Dimensions.addEventListener('change', updateLayout);
@@ -108,12 +108,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     image: {
-        //width: '80%',
-        //height: 380,
         marginTop: 30,
-    },
-    imageBig: {
-
     },
     appName: {
         textTransform: 'uppercase',
