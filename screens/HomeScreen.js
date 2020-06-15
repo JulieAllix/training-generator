@@ -1,5 +1,11 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { 
+    View, 
+    Text, 
+    StyleSheet, 
+    Image, 
+    Dimensions 
+} from 'react-native';
 
 import Colors from '../constants/themeColors';
 import DefaultStyles from '../constants/defaultStyles';
@@ -7,11 +13,24 @@ import DefaultStyles from '../constants/defaultStyles';
 import MainButton from '../components/MainButton';
 
 const HomeScreen = props => {
+    const [imageWidth, setImageWidth] = useState(Dimensions.get('window').width * 0.8);
+
+    useEffect(() => {
+        const updateLayout = () => {
+            setImageWidth(Dimensions.get('window').width * 0.8);
+        };
+    
+        Dimensions.addEventListener('change', updateLayout);
+        
+        return () => {
+            Dimensions.removeEventListener('change', updateLayout);
+        };
+    });
 
     return (
         <View style={styles.screen}>
             <Image 
-                style={styles.image} 
+                style={{...styles.image, width: imageWidth}} 
                 source={require('../assets/fitness-app.png')}
                 resizeMode="cover"
                 alt="A lady holding weights with a mobile phone in the background"
@@ -31,8 +50,8 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     image: {
-        width: '80%',
-        height: 380,
+        //width: '80%',
+        //height: 380,
         marginTop: 30,
     },
     appName: {
