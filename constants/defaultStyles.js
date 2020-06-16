@@ -1,14 +1,16 @@
 import { StyleSheet } from 'react-native';
 import Colors from '../constants/themeColors';
 
+import { Dimensions } from 'react-native';
+
 export default StyleSheet.create({
     appTitle: {
         fontFamily: 'poppins-med',
         color: Colors.accent,
-        fontSize: 34,
+        fontSize: Dimensions.get('window').width > 350 ? 30 : 22,
         textTransform: 'uppercase',
         textAlign: 'center',
-        marginTop: 20,
+        marginTop: 25,
     },
     pageTitle: {
         fontFamily: 'abril',
@@ -21,14 +23,14 @@ export default StyleSheet.create({
     pageSubtitle: {
         fontFamily: 'montserrat',
         color: Colors.accent,
-        fontSize: 16,
+        fontSize: Dimensions.get('window').width > 350 ? 16 : 14,
         textAlign: 'center',
-        marginVertical: 15,
+        marginVertical: Dimensions.get('window').width > 350 ? 30 : 20,
     },
     buttonText: {
         fontFamily: 'poppins',
         color: 'white',
-        fontSize: 14,
+        fontSize: Dimensions.get('window').width > 350 ? 14 : 12,
         textTransform: 'uppercase',
         textAlign: 'center',
     },

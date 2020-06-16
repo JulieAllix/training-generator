@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
@@ -42,9 +42,11 @@ export default function App() {
   };
 
   return (
-    <View style={styles.screen}>
-      {content}
-    </View>
+    <SafeAreaView style={styles.screen}>
+      <ScrollView>
+        {content} 
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 

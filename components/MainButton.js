@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 
 import Colors from '../constants/themeColors';
 import DefaultStyles from '../constants/defaultStyles';
@@ -17,10 +17,10 @@ const MainButton = props => {
 const styles = StyleSheet.create({
     button: {
         backgroundColor: Colors.primary,
-        padding: 10,
+        padding: Dimensions.get('window').width > 350 ? 10 : 5,
         marginVertical: 15,
         borderRadius: 20,
-        width: 115,
+        width: Dimensions.get('window').width > 350 ? 115 : 100,
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 6,

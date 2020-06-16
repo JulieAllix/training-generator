@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 
 import Colors from '../constants/themeColors';
 import DefaultStyles from '../constants/defaultStyles';
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     options: {
-        marginVertical: 50,
+        marginVertical: Dimensions.get('window').width > 350 ? 40 : 15,
     },
     optionsRow: {
         flexDirection: 'row',
