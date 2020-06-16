@@ -10,7 +10,7 @@ export default StyleSheet.create({
         fontSize: Dimensions.get('window').width > 350 ? 30 : 22,
         textTransform: 'uppercase',
         textAlign: 'center',
-        marginTop: 20,
+        marginTop: 25,
     },
     pageTitle: {
         fontFamily: 'abril',
@@ -25,7 +25,7 @@ export default StyleSheet.create({
         color: Colors.accent,
         fontSize: Dimensions.get('window').width > 350 ? 16 : 14,
         textAlign: 'center',
-        marginVertical: Dimensions.get('window').width > 350 ? 15 : 10,
+        marginVertical: Dimensions.get('window').width > 350 ? 30 : 20,
     },
     buttonText: {
         fontFamily: 'poppins',
