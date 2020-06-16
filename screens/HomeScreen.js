@@ -45,7 +45,7 @@ const HomeScreen = props => {
         };
     });
 
-    if (availableDeviceWidth > 400) {
+    if (availableDeviceWidth > 500) {
         return (
             <View style={styles.bigScreen}>
                 <View style={styles.bigScreenContentWrapper}>
