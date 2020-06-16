@@ -30,7 +30,7 @@ export default StyleSheet.create({
     buttonText: {
         fontFamily: 'poppins',
         color: 'white',
-        fontSize: 14,
+        fontSize: Dimensions.get('window').width > 350 ? 14 : 12,
         textTransform: 'uppercase',
         textAlign: 'center',
     },

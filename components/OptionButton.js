@@ -47,7 +47,7 @@ const OptionButton = props => {
     return (
         <TouchableOpacity style={{...styles.option, height: buttonHeight, width: buttonWidth }}>
             <Image 
-                style={styles.image} 
+                style={{...styles.image, width: buttonWidth * 0.5, height: buttonHeight * 0.5 }} 
                 source={props.src}
                 resizeMode="stretch"
                 alt={props.alt}
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     image: { 
-        height: '60%',
+        
         marginVertical: 13,
     },
     

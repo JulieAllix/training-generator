@@ -16,9 +16,6 @@ const HomeScreen = props => {
     const [availableDeviceWidth, setAvailableDeviceWidth] = useState(Dimensions.get('window').width);
     const [availableDeviceHeight, setAvailableDeviceHeight] = useState(Dimensions.get('window').height);
 
-    const [imageWidth, setImageWidth] = useState(Dimensions.get('window').width * 0.8);
-    const [imageHeight, setImageHeight] = useState(Dimensions.get('window').height * 0.5);
-
     useEffect(() => {
         const updateLayout = () => {
             setAvailableDeviceWidth(Dimensions.get('window').width);
@@ -32,16 +29,19 @@ const HomeScreen = props => {
         };
     });
 
+    const [imageWidth, setImageWidth] = useState(availableDeviceWidth * 0.8);
+    const [imageHeight, setImageHeight] = useState(availableDeviceHeight * 0.5);
+
     useEffect(() => {
-        const updateLayout = () => {
-            setImageWidth(Dimensions.get('window').width * 0.8);
-            setImageHeight(Dimensions.get('window').height * 0.5);
+        const updateImageSize = () => {
+            setImageWidth(availableDeviceWidth * 0.8);
+            setImageHeight(availableDeviceHeight * 0.5);
         };
     
-        Dimensions.addEventListener('change', updateLayout);
+        Dimensions.addEventListener('change', updateImageSize);
         
         return () => {
-            Dimensions.removeEventListener('change', updateLayout);
+            Dimensions.removeEventListener('change', updateImageSize);
         };
     });
 
@@ -79,9 +79,7 @@ const HomeScreen = props => {
                 <MainButton onPress={() => props.onStartApp(true)}>Get started</MainButton>
             </View>
         );
-    }
-
-    
+    } 
 };
 
 const styles = StyleSheet.create({
